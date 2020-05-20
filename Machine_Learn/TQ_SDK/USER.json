@@ -1,0 +1,177 @@
+{
+  "aid": "rtn_data",                                      //数据推送
+  "data": [                                               //diff数据数组, 一次推送中可能含有多个数据包
+  {
+    "trade": {                                            //交易相关数据
+      "user1": {                                          //登录用户名
+        "user_id": "user1",                               //登录用户名
+        "accounts": {                                     //账户资金信息
+          "CNY": {                                        //account_key, 通常为币种代码
+            //核心字段
+            "account_id": "423423",                       //账号
+            "currency": "CNY",                            //币种
+            "balance": 9963216.550000003,                 //账户权益
+            "available": 9480176.150000002,               //可用资金
+            //参考字段
+            "pre_balance": 12345,                         //上一交易日结算时的账户权益
+            "deposit": 42344,                             //本交易日内的入金金额
+            "withdraw": 42344,                            //本交易日内的出金金额
+            "commission": 123,                            //本交易日内交纳的手续费
+            "preminum": 123,                              //本交易日内交纳的权利金
+            "static_balance": 124895,                     //静态权益
+            "position_profit": 12345,                     //持仓盈亏
+            "float_profit": 8910.231,                     //浮动盈亏
+            "risk_ratio": 0.048482375,                    //风险度
+            "margin": 11232.23,                           //占用资金
+            "frozen_margin": 12345,                       //冻结保证金
+            "frozen_commission": 123,                     //冻结手续费
+            "frozen_premium": 123,                        //冻结权利金
+            "close_profit": 12345,                        //本交易日内平仓盈亏
+            "position_profit": 12345                     //当前持仓盈亏
+          }
+        },
+        "positions": {                                    //持仓
+          "SHFE.cu1801": {                                //合约代码
+            //核心字段
+            "exchange_id": "SHFE",                        //交易所
+            "instrument_id": "cu1801",                    //合约代码
+            //参考字段
+            "hedge_flag": "SPEC",                         //套保标记
+            "open_price_long": 3203.5,                    //多头开仓均价
+            "open_price_short": 3100.5,                   //空头开仓均价
+            "open_cost_long": 3203.5,                     //多头开仓成本
+            "open_cost_short": 3100.5,                    //空头开仓成本
+            "float_profit_long": 32324.4,                 //多头浮动盈亏
+            "float_profit_short": 32324.4,                //空头浮动盈亏
+            "position_cost_long": 32324.4,                //多头持仓成本
+            "position_cost_short": 32324.4,               //空头持仓成本
+            "position_profit_long": 32324.4,              //多头浮动盈亏
+            "position_profit_long": 32324.4,              //空头浮动盈亏
+            "volume_long_today": 5,                       //多头今仓持仓手数
+            "volume_long_his": 5,                         //多头老仓持仓手数
+            "volume_short_today": 5,                      //空头今仓持仓手数
+            "volume_short_his": 5,                        //空头老仓持仓手数
+            "margin_long": 32324.4,                       //多头持仓占用保证金
+            "margin_short": 32324.4,                      //空头持仓占用保证金
+            "order_volume_buy_open": 1,                   //买开仓挂单手数
+            "order_volume_buy_close": 1,                  //买平仓挂单手数
+            "order_volume_sell_open": 1,                  //卖开仓挂单手数
+            "order_volume_sell_close": 1                 //卖平仓挂单手数
+          }
+        },
+        "orders": {                                       //委托单
+          "123": {                                        //order_id, 用于唯一标识一个委托单. 对于一个USER, order_id 是永远不重复的
+            //核心字段
+            "order_id": "123",                            //委托单ID, 对于一个USER, order_id 是永远不重复的
+            "order_type": "TRADE",                        //指令类型
+            "exchange_id": "SHFE",                        //交易所
+            "instrument_id": "cu1801",                    //在交易所中的合约代码
+            "direction": "BUY",                           //下单方向, BUY=
+            "offset": "OPEN",                             //开平标志
+            "volume_orign": 6,                            //总报单手数
+            "volume_left": 3,                             //未成交手数
+            "trade_type": "TAKEPROFIT",                   //指令类型
+            "price_type": "LIMIT",                        //指令类型
+            "limit_price": 45000,                         //委托价格, 仅当 price_type = LIMIT 时有效
+            "time_condition": "GTD",                      //时间条件
+            "volume_condition": "ANY",                    //数量条件
+            "min_volume": 0,
+            "hedge_flag": "SPECULATION",                  //保值标志
+            "status": "ALIVE",                            //委托单状态, ALIVE=有效, FINISHED=已完
+            //参考字段
+            "last_msg":       "",                               //最后操作信息
+            "insert_date_time":       1928374000000000,         //下单时间
+            "exchange_order_id": "434214"                //交易所单号
+          }
+        },
+        "trades": {                                       //成交记录
+          "123|1": {                                      //trade_key, 用于唯一标识一个成交项
+            "order_id": "123",
+            "exchange_id": "SHFE",                        //交易所
+            "instrument_id": "cu1801",                    //交易所内的合约代码
+            "exchange_trade_id": "1243",                  //交易所成交号
+            "direction": "BUY",                           //成交方向
+            "offset": "OPEN",                             //开平标志
+            "volume": 6,                                  //成交手数
+            "price": 1234.5,                              //成交价格
+            "trade_date_time": 1928374000000000           //成交时间
+          }
+        }
+      }
+    }
+
+  }]
+
+}
+{
+  "aid": "rtn_data",                                        //数据推送
+  "data": [                                                 //diff数据数组, 一次推送中可能含有多个数据包
+    {
+      "quotes": {
+        //实时行情数据
+        "SHFE.cu1612": {
+          "instrument_id": "SHFE.cu1612",
+          //合约代码
+          "volume_multiple": 300,
+          //合约乘数
+          "price_tick": 0.2,
+          //合约价格单位
+          "price_decs": 1,
+          //合约价格小数位数
+          "max_market_order_volume": 1000,
+          //市价单最大下单手数
+          "min_market_order_volume": 1,
+          //市价单最小下单手数
+          "max_limit_order_volume": 1000,
+          //限价单最大下单手数
+          "min_limit_order_volume": 1,
+          //限价单最小下单手数
+          "margin": 4480.0,
+          //每手保证金
+          "commission": 2.5,
+          //每手手续费
+          "datetime": "2016-12-30 13:21:32.500000",
+          //时间
+          "ask_price1": 36590.0,
+          //卖价
+          "ask_volume1": 121,
+          //卖量
+          "bid_price1": 36580.0,
+          //买价
+          "bid_volume1": 3,
+          //买量
+          "last_price": 36580.0,
+          //最新价
+          "highest": 36580.0,
+          //最高价
+          "lowest": 36580.0,
+          //最低价
+          "amount": 213445312.5,
+          //成交额
+          "volume": 23344,
+          //成交量
+          "open_interest": 23344,
+          //持仓量
+          "pre_open_interest": 23344,
+          //昨持
+          "pre_close": 36170.0,
+          //昨收
+          "open": 36270.0,
+          //今开
+          "close": 36270.0,
+          //收盘
+          "lower_limit": 34160.0,
+          //跌停
+          "upper_limit": 38530.0,
+          //涨停
+          "average": 36270.1,
+          //均价
+          "pre_settlement": 36270.0,
+          //昨结
+          "settlement": 36270.0
+          //结算价
+        },
+      },
+    },
+  ]
+}
