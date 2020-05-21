@@ -1,10 +1,10 @@
 #%%
 from tqsdk import TqApi, TqSim, TqBacktest,BacktestFinished,TqReplay,TargetPosTask
-from datetime import date
+from datetime import date,datetime
 
-api = TqApi(TqSim(),web_gui=True)
+api = TqApi(TqSim(),backtest=TqBacktest(start_dt=datetime(2020, 5, 12,21,1,2,795738,) ,end_dt=datetime(2020, 5, 13,14,59,59,0)),web_gui=True)
 
-symbol = 'SHFE.ni2007'
+symbol = 'DCE.pp2009'
 ticks = api.get_tick_serial(symbol)
 quote = api.get_quote(symbol)
 position = api.get_position(symbol)
