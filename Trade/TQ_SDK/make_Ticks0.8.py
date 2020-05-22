@@ -4,10 +4,15 @@ from datetime import date, datetime
 from pandas import Series, DataFrame
 import pandas as pd
 
+'''
+tick策略,价格上涨时做多,价格下跌时做空
+'''
+
+
 # api = TqApi(TqSim(),web_gui=True)
 acc = TqSim()
-symbol = "SHFE.ni2008"
-一跳价格 = 10.0
+symbol = "SHFE.rb2010"
+一跳价格 = 2.0
 volume = 1  # 每次下单数
 status = '等待开仓'
 check_tick = 10

@@ -55,10 +55,10 @@ async def price_watcher(open_price, close_price, volume):
             print("时间:", quote.datetime, "最新价:", quote.last_price, "平仓", volume, "手", "总仓位:", target_volume, "手")
 
 
-for i in range(grid_amount):
+for i in range(grid_amount):#同时监控网格内的多个价格
     api.create_task(price_watcher(grid_prices_long[i+1], grid_prices_long[i], grid_volume_long[i]))
     api.create_task(price_watcher(grid_prices_short[i+1], grid_prices_short[i], grid_volume_short[i]))
 
-with closing(api):#这个contextlib.closing()会帮它加上__enter__()和__exit__()，使其满足with的条件。
+with closing(api):#这个contextlib.closing()会帮它加上__enter__()和__exit__()，使其满足with的条件。使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。
     while True:
         api.wait_update()
